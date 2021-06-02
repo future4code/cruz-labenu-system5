@@ -1,6 +1,5 @@
 import connection from "../data/connection";
 import { labenuStudent } from "../types/student";
-import dayjs from "dayjs";
 
 export const createStudent = async ({
   id,
@@ -27,7 +26,7 @@ export const editStudent = async (
     .where("id", id);
 };
 
-export const getStudentAge = async (id: string): Promise<any> => {
+export const studentAge = async (id: string): Promise<any> => {
   const [result] = await connection.raw(`
     SELECT DATEDIFF(CURDATE(), birth_date) / 365
     AS "age"
@@ -35,5 +34,17 @@ export const getStudentAge = async (id: string): Promise<any> => {
     WHERE id = "${id}"
   `);
 
+  return result[0];
+};
+
+export const studentsByClass = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT
+      student.name
+    FROM class
+    JOIN student
+    ON class.id = student.class_id
+    WHERE class.id = "${id}"
+  `);
   return result[0];
 };

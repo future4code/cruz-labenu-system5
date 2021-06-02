@@ -21,5 +21,6 @@ routes.patch("/teacher/:id", teacherController.addClass);
 routes.post("/student", studentController.postStudent);
 routes.post("/student/update-class/:id", studentController.updateStudent);
 routes.get("/student-age/:id", studentController.getStudentAge);
+routes.get("/class/:id/students", studentController.getStudentsByClass);
 
 export default routes;
