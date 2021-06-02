@@ -26,7 +26,7 @@ export const editStudent = async (
     .where("id", id);
 };
 
-export const getStudentAge = async (id: string): Promise<any> => {
+export const studentAge = async (id: string): Promise<any> => {
   const [result] = await connection.raw(`
     SELECT DATEDIFF(CURDATE(), birth_date) / 365
     AS "age"
@@ -37,6 +37,17 @@ export const getStudentAge = async (id: string): Promise<any> => {
   return result[0];
 };
 
+export const studentsByClass = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT
+      student.name
+    FROM class
+    JOIN student
+    ON class.id = student.class_id
+    WHERE class.id = "${id}"
+  `);
+  return result[0];
+  
 export const deleteClass = async (id: string): Promise<any> => {
   await connection("student")
     .update({

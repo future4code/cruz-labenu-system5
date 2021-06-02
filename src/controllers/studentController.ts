@@ -4,7 +4,8 @@ import {
   createStudent,
   deleteClass,
   editStudent,
-  getStudentAge,
+  studentAge,
+  studentsByClass,
 } from "../data/studentQueries";
 import { labenuStudent } from "../types/student";
 
@@ -40,7 +41,7 @@ export default class StudentController {
   getStudentAge = async (req: Request, res: Response) => {
     try {
       const id = req.params.id as string;
-      const result = await getStudentAge(id);
+      const result = await studentAge(id);
       const response = { age: Math.floor(result.age) };
       res.status(200).send(response);
     } catch (error) {
@@ -48,6 +49,12 @@ export default class StudentController {
     }
   };
 
+  getStudentsByClass = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id as string;
+      const result = await studentsByClass(id);
+      res.status(200).send({ students: result });
+      
   removeClass = async (req: Request, res: Response) => {
     try {
       const id = req.params.id as string;
