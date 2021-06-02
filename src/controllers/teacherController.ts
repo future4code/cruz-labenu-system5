@@ -5,6 +5,7 @@ import {
   createSpecialty,
   createTeacher,
   selectAllSpecialties,
+  updateClassIn,
 } from "../data/teacherQueries";
 
 export default class TeacherController {
@@ -52,11 +53,26 @@ export default class TeacherController {
     }
   };
 
-  getAllSpecialties = async (req: Request, res: Response) => {
+  getAllSpecialties = async (_: Request, res: Response) => {
     try {
       const result = await selectAllSpecialties();
 
       res.send({ specialties: result });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  };
+
+  addClass = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id as string;
+      const { classId } = req.body;
+
+      if (!classId) throw new Error("The idClass is missing");
+
+      await updateClassIn(id, classId);
+
+      res.send({ message: "successfully assigned class" });
     } catch (error) {
       res.status(400).send({ message: error.message });
     }
