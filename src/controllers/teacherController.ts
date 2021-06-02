@@ -4,6 +4,7 @@ import { specialty, teacher } from "../types/teacher";
 import {
   createSpecialty,
   createTeacher,
+  deleteClass,
   selectAllSpecialties,
   updateClassIn,
 } from "../data/teacherQueries";
@@ -73,6 +74,17 @@ export default class TeacherController {
       await updateClassIn(id, classId);
 
       res.send({ message: "successfully assigned class" });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  };
+  removeClass = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id as string;
+
+      await deleteClass(id);
+
+      res.send({ message: "Class has been removed" });
     } catch (error) {
       res.status(400).send({ message: error.message });
     }
