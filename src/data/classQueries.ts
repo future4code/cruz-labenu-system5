@@ -1,4 +1,4 @@
-import connection from "../data/connection";
+import connection from "./connection";
 import { labenuClass } from "../types/class";
 
 export const createClass = async ({

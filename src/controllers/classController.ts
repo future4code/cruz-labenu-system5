@@ -1,7 +1,7 @@
 import { Response, Request } from "express";
 import { labenuClass } from "../types/class";
 import { v4 as uuidv4 } from "uuid";
-import { createClass } from "../data/classQuerys";
+import { createClass } from "../data/classQueries";
 
 export default class ClassController {
   postClass = async (req: Request, res: Response) => {
