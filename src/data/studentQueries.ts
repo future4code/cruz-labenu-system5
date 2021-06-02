@@ -47,4 +47,11 @@ export const studentsByClass = async (id: string): Promise<any> => {
     WHERE class.id = "${id}"
   `);
   return result[0];
+  
+export const deleteClass = async (id: string): Promise<any> => {
+  await connection("student")
+    .update({
+      class_id: null,
+    })
+    .where("id", id);
 };
