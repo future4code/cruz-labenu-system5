@@ -1,7 +1,11 @@
 import { Response, Request } from "express";
 import { labenuClass } from "../types/class";
 import { v4 as uuidv4 } from "uuid";
-import { createClass, updateModule } from "../data/classQueries";
+import {
+  createClass,
+  updateModule,
+  teachersByClass,
+} from "../data/classQueries";
 
 export default class ClassController {
   postClass = async (req: Request, res: Response) => {
@@ -34,6 +38,16 @@ export default class ClassController {
       await updateModule(id, module);
 
       res.send({ message: "Updated module" });
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
+  };
+
+  getTeachersByClass = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id as string;
+      const result = await teachersByClass(id);
+      res.status(200).send({ teachers: result });
     } catch (error) {
       res.status(400).send(error.message);
     }

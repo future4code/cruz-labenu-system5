@@ -22,5 +22,6 @@ routes.post("/student", studentController.postStudent);
 routes.post("/student/update-class/:id", studentController.updateStudent);
 routes.get("/student-age/:id", studentController.getStudentAge);
 routes.get("/class/:id/students", studentController.getStudentsByClass);
+routes.get("/class/:id/teachers", classController.getTeachersByClass);
 
 export default routes;

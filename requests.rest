@@ -39,7 +39,48 @@ GET http://localhost:3003/student-age/d4fbb9a3-7c9e-4e0b-8077-d4ac5a67020d
 
 ###
 
-// Get the amoung of students in a class by id
+// Get students by class
 GET http://localhost:3003/class/1f193484-dc32-40dc-a59a-9ba761fea701/students
+
+###
+
+// Create specialty
+POST http://localhost:3003/teacher/specialty
+Content-Type: application/json
+
+{
+  "name": "Infra"
+}
+
+###
+
+// Create teacher
+POST http://localhost:3003/teacher
+Content-Type: application/json
+
+{
+  "name": "Tom Hanks",
+  "email": "tom@mail.com",
+  "birthDate": "1960-06-15",
+  "specialties": ["0b7f1767-5a0f-45dc-9f77-7f7e7ba848fb"]
+}
+
+###
+
+// Assign teacher to a class
+PATCH http://localhost:3003/teacher/7430e843-a16a-4db0-aa13-e1a7a530612b
+Content-Type: application/json
+
+{
+  "classId": "1f193484-dc32-40dc-a59a-9ba761fea701"
+}
+
+###
+
+// Get teachers by class
+GET http://localhost:3003/class/1f193484-dc32-40dc-a59a-9ba761fea701/teachers
+
+
+
 
 
