@@ -13,6 +13,7 @@ routes.get("/ping", (_, res) => {
 });
 
 routes.post("/class", classController.postClass);
+routes.patch("/class/:id", classController.changeModule);
 routes.post("/teacher", teacherController.postTeacher);
 routes.post("/teacher/specialty", teacherController.postSpecialty);
 routes.get("/teacher/specialty", teacherController.getAllSpecialties);

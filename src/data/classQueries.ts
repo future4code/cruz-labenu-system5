@@ -18,3 +18,10 @@ export const createClass = async ({
     module,
   });
 };
+
+export const updateModule = async (
+  classId: string,
+  module: number
+): Promise<any> => {
+  await connection("class").update({ module }).where("id", classId);
+};
