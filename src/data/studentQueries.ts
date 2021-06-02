@@ -1,6 +1,5 @@
 import connection from "../data/connection";
 import { labenuStudent } from "../types/student";
-import dayjs from "dayjs";
 
 export const createStudent = async ({
   id,
@@ -36,4 +35,12 @@ export const getStudentAge = async (id: string): Promise<any> => {
   `);
 
   return result[0];
+};
+
+export const deleteClass = async (id: string): Promise<any> => {
+  await connection("student")
+    .update({
+      class_id: null,
+    })
+    .where("id", id);
 };
