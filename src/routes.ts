@@ -16,6 +16,7 @@ routes.post("/class", classController.postClass);
 routes.post("/teacher", teacherController.postTeacher);
 routes.post("/teacher/specialty", teacherController.postSpecialty);
 routes.get("/teacher/specialty", teacherController.getAllSpecialties);
+routes.patch("/teacher/:id", teacherController.addClass);
 routes.post("/student", studentController.postStudent);
 
 export default routes;

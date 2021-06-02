@@ -26,3 +26,12 @@ export const selectAllSpecialties = async (): Promise<any> => {
 
   return result;
 };
+
+export const updateClassIn = async (
+  teacherId: string,
+  classId: string
+): Promise<any> => {
+  await connection("teacher")
+    .update({ class_id: classId })
+    .where("id", teacherId);
+};
