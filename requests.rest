@@ -17,7 +17,17 @@ POST http://localhost:3003/student
 Content-Type: application/json
 
 {
-  "name": "Ravioli Alcantara",
-  "email": "ravi@mail.com",
-  "birthDate": "2020-02-20"
+  "name": "Teste",
+  "email": "teste@mail.com",
+  "birthDate": "2017-02-20"
+}
+
+###
+
+// Choose a class to a student
+POST http://localhost:3003/student/update-class/8433274f-06df-4876-821b-7fef33afbf44
+Content-Type: application/json
+
+{
+  "classId": "1f193484-dc32-40dc-a59a-9ba761fea701"
 }

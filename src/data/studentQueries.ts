@@ -14,3 +14,14 @@ export const createStudent = async ({
     birth_date,
   });
 };
+
+export const editStudent = async (
+  classId: string,
+  id: string
+): Promise<any> => {
+  await connection("student")
+    .update({
+      class_id: classId,
+    })
+    .where("id", id);
+};
