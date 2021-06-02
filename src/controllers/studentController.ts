@@ -1,6 +1,10 @@
 import { Response, Request } from "express";
 import { v4 as uuidv4 } from "uuid";
-import { createStudent, editStudent } from "../data/studentQueries";
+import {
+  createStudent,
+  editStudent,
+  getStudentAge,
+} from "../data/studentQueries";
 import { labenuStudent } from "../types/student";
 
 export default class StudentController {
@@ -15,7 +19,7 @@ export default class StudentController {
       };
 
       await createStudent(data);
-      res.send({ message: "Student created!" });
+      res.status(200).send({ message: "Student created!" });
     } catch (error) {
       res.status(400).send(error.message);
     }
@@ -26,7 +30,18 @@ export default class StudentController {
       const id = req.params.id as string;
       const { classId } = req.body;
       await editStudent(classId, id);
-      res.send({ message: "Student added in a class!" });
+      res.status(200).send({ message: "Student added in a class!" });
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
+  };
+
+  getStudentAge = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id as string;
+      const result = await getStudentAge(id);
+      const response = { age: Math.floor(result.age) };
+      res.status(200).send(response);
     } catch (error) {
       res.status(400).send(error.message);
     }
