@@ -35,3 +35,7 @@ export const updateClassIn = async (
     .update({ class_id: classId })
     .where("id", teacherId);
 };
+
+export const deleteClass = async (teacherId: string): Promise<any> => {
+  await connection("teacher").update({ class_id: null }).where("id", teacherId);
+};
