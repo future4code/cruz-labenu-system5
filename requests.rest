@@ -31,3 +31,9 @@ Content-Type: application/json
 {
   "classId": "1f193484-dc32-40dc-a59a-9ba761fea701"
 }
+
+###
+
+// Get a student's age
+GET http://localhost:3003/student-age/d4fbb9a3-7c9e-4e0b-8077-d4ac5a67020d
+
