@@ -2,6 +2,7 @@ import { Response, Request } from "express";
 import { v4 as uuidv4 } from "uuid";
 import {
   createStudent,
+  deleteClass,
   editStudent,
   getStudentAge,
 } from "../data/studentQueries";
@@ -42,6 +43,18 @@ export default class StudentController {
       const result = await getStudentAge(id);
       const response = { age: Math.floor(result.age) };
       res.status(200).send(response);
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
+  };
+
+  removeClass = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id as string;
+
+      await deleteClass(id);
+
+      res.send({ message: "Class has been removed" });
     } catch (error) {
       res.status(400).send(error.message);
     }
