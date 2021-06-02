@@ -1,0 +1,23 @@
+// Create class
+POST http://localhost:3003/class
+Content-Type: application/json
+
+{
+  "name": "Cruz",
+  "startDate": "2021-01-25",
+  "endDate": "2021-08-30",
+  "shift": "fulltime",
+  "module": 4
+}
+
+###
+
+// Create student
+POST http://localhost:3003/student
+Content-Type: application/json
+
+{
+  "name": "Ravioli Alcantara",
+  "email": "ravi@mail.com",
+  "birthDate": "2020-02-20"
+}
