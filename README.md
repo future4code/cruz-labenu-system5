@@ -45,7 +45,7 @@ Sistema que simula o banco de dados da Labenu com os cadastros de docentes, disc
     <img src="https://avatars.githubusercontent.com/u/63327969?s=460&v=4" width="100px" alt="Imagem do perfil da Alexandra"/>
     <br />
     <sub><b>Alexandra Alcantara</b></sub><br />:snowflake::snowman::snowflake:</td>
-    <td align="center"><a href="https://github.com/kelvia-snts">
+    <td align="center"><a href="https://github.com/fagnerzulin">
     <img src="https://avatars.githubusercontent.com/u/52076737?v=4" width="100px" alt="Imagem do perfil do Fagner"/>
     <br />
     <sub><b>Fagner Zulin</b></sub><br />🚀</td>
