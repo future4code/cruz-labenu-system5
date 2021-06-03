@@ -76,3 +76,15 @@ export const updateStudentHobbies = async (
     student_id: studentId,
   });
 };
+
+export const studentsByHobby = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT
+      student.name
+    FROM student_hobbies AS hobbies
+    JOIN student
+    ON hobbies.student_id = student.id
+    WHERE hobbies.hobby_id = "${id}"
+  `);
+  return result[0];
+};

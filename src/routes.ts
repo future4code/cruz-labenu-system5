@@ -28,5 +28,6 @@ routes.get("/student-age/:id", studentController.getStudentAge);
 routes.get("/class/:id/students", studentController.getStudentsByClass);
 routes.get("/class/:id/teachers", classController.getTeachersByClass);
 routes.delete("/student/:id", studentController.removeStudent);
+routes.get("/hobby/:id/students", studentController.getStudentsByHobby);
 
 export default routes;

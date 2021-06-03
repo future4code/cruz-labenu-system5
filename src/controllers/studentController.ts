@@ -8,6 +8,7 @@ import {
   editStudent,
   studentAge,
   studentsByClass,
+  studentsByHobby,
   updateStudentHobbies,
 } from "../data/studentQueries";
 import { labenuStudent, hobby } from "../types/student";
@@ -23,6 +24,9 @@ export default class StudentController {
         id: uuidv4(),
       };
 
+      if (!name || !birthDate || !email)
+        throw new Error("Something is missing: id, name, email or birthDate.");
+
       await createStudent(data);
       res.status(200).send({ message: "Student created!" });
     } catch (error) {
@@ -34,6 +38,9 @@ export default class StudentController {
     try {
       const id = req.params.id as string;
       const { classId } = req.body;
+
+      if (!classId) throw new Error("Please, inform the classId.");
+
       await editStudent(classId, id);
       res.status(200).send({ message: "Student added in a class!" });
     } catch (error) {
@@ -105,13 +112,23 @@ export default class StudentController {
       const { hobbyId, studentId } = req.body;
 
       if (!hobbyId || !studentId)
-        throw new Error("Something is missing: hobbyId or studentId.");
+        throw new Error("Please, inform both hobbyId and studentId.");
 
       await updateStudentHobbies(hobbyId, studentId);
 
       res.send({ message: "Hobby assigned to a student!" });
     } catch (error) {
       res.status(400).send({ message: error.message });
+    }
+  };
+
+  getStudentsByHobby = async (req: Request, res: Response) => {
+    try {
+      const id = req.params.id as string;
+      const result = await studentsByHobby(id);
+      res.status(200).send({ students: result });
+    } catch (error) {
+      res.status(400).send(error.message);
     }
   };
 }

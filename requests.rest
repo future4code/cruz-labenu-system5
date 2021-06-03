@@ -17,9 +17,9 @@ POST http://localhost:3003/student
 Content-Type: application/json
 
 {
-  "name": "Teste",
-  "email": "teste@mail.com",
-  "birthDate": "2017-02-20"
+  "name": "64651",
+  "email": "38",
+  "birthDate": "2010-08-02"
 }
 
 ###
@@ -35,7 +35,7 @@ Content-Type: application/json
 ###
 
 // Get a student's age
-GET http://localhost:3003/student-age/d4fbb9a3-7c9e-4e0b-8077-d4ac5a67020d
+GET http://localhost:3003/student-age/
 
 ###
 
@@ -97,9 +97,14 @@ PATCH http://localhost:3003/student/add/hobby
 Content-Type: application/json
 
 {
-  "hobbyId": "84554529-63ff-4582-b206-83215c4edc6e",
-  "studentId": "8513b498-5d5d-4f6c-ab27-b218869e11a7"
+  "hobbyId": "",
+  "studentId": "4d17c4a0-d870-47f5-b27a-16308fb05f05"
 }
+
+###
+
+// Get students by hobby
+GET http://localhost:3003/hobby/84554529-63ff-4582-b206-83215c4edc6e/students
 
 
 
