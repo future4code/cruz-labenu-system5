@@ -1,5 +1,5 @@
 import connection from "../data/connection";
-import { labenuStudent } from "../types/student";
+import { hobby, labenuStudent } from "../types/student";
 
 export const createStudent = async ({
   id,
@@ -61,4 +61,18 @@ export const deleteStudent = async (id: string): Promise<any> => {
   await connection("student_hobbies").delete().where("student_id", id);
 
   await connection("student").delete().where("id", id);
+};
+
+export const createHobby = async (data: hobby): Promise<any> => {
+  await connection("hobbies").insert(data);
+};
+
+export const updateStudentHobbies = async (
+  hobbyId: string,
+  studentId: string
+): Promise<any> => {
+  await connection("student_hobbies").insert({
+    hobby_id: hobbyId,
+    student_id: studentId,
+  });
 };

@@ -4,3 +4,8 @@ export type labenuStudent = {
   email: string;
   birthDate: string;
 };
+
+export type hobby = {
+  id: string;
+  name: string;
+};
