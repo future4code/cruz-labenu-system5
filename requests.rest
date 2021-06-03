@@ -90,5 +90,16 @@ Content-Type: application/json
   "name": "Sing"
 }
 
+###
+
+// Assign hobby to a student
+PATCH http://localhost:3003/student/add/hobby
+Content-Type: application/json
+
+{
+  "hobbyId": "84554529-63ff-4582-b206-83215c4edc6e",
+  "studentId": "8513b498-5d5d-4f6c-ab27-b218869e11a7"
+}
+
 
 

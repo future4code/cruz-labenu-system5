@@ -8,6 +8,7 @@ import {
   editStudent,
   studentAge,
   studentsByClass,
+  updateStudentHobbies,
 } from "../data/studentQueries";
 import { labenuStudent, hobby } from "../types/student";
 
@@ -94,6 +95,21 @@ export default class StudentController {
       };
       await createHobby(data);
       res.send({ message: "Hobby created!" });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  };
+
+  addHobby = async (req: Request, res: Response) => {
+    try {
+      const { hobbyId, studentId } = req.body;
+
+      if (!hobbyId || !studentId)
+        throw new Error("Something is missing: hobbyId or studentId.");
+
+      await updateStudentHobbies(hobbyId, studentId);
+
+      res.send({ message: "Hobby assigned to a student!" });
     } catch (error) {
       res.status(400).send({ message: error.message });
     }

@@ -78,6 +78,7 @@ export default class TeacherController {
       res.status(400).send({ message: error.message });
     }
   };
+
   removeClass = async (req: Request, res: Response) => {
     try {
       const id = req.params.id as string;
