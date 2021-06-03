@@ -25,17 +25,15 @@ Sistema que simula o banco de dados da Labenu com os cadastros de docentes, disc
 
 ### 🛠 Tecnologias
 
-<a href="https://www.mysql.com/">🔗 MySQL</a>
+<a href="https://www.typescriptlang.org/
+">🔗 TypeScript</a>
 
-- Sistema gerenciador de banco de dados relacional de código aberto.
+<a href="https://www.mysql.com/">🔗 MySQL</a>
 
 <a href="https://expressjs.com/pt-br/">🔗 Express.js</a>
 
-- Framework para Node.js que fornece recursos para a criação de APIs.
-
 <a href="http://knexjs.org/">🔗 Knex.js</a>
 
-- Query builder para JavaScript.
 
 ### 🚀 Autora e Autor
 
