@@ -24,6 +24,7 @@ routes.post("/student/update-class/:id", studentController.updateStudent);
 routes.delete("/student/update-class/:id", studentController.removeClass);
 routes.get("/student-age/:id", studentController.getStudentAge);
 routes.get("/class/:id/students", studentController.getStudentsByClass);
+routes.get("/class/:id/teachers", classController.getTeachersByClass);
 routes.delete("/student/:id", studentController.removeStudent);
 
 export default routes;

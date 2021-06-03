@@ -25,3 +25,15 @@ export const updateModule = async (
 ): Promise<any> => {
   await connection("class").update({ module }).where("id", classId);
 };
+
+export const teachersByClass = async (id: string): Promise<any> => {
+  const result = await connection.raw(`
+    SELECT
+      teacher.name
+    FROM teacher
+    JOIN class
+    ON class.id = teacher.class_id
+    WHERE class.id = "${id}"
+  `);
+  return result[0];
+};
