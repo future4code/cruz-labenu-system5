@@ -1,33 +1,53 @@
-## LabenuSystem:
+## LabenuSystem
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+Sistema que simula o banco de dados da Labenu com os cadastros de docentes, discentes e turmas.
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+### 🏁 Features
 
-1. Estudantes 
+- **Requisitos mínimos:**<br>
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+  [x] Criar estudante;<br>
+  [x] Criar docente;<br>
+  [x] Criar turma;<br>
+  [x] Adicionar estudante na turma;<br>
+  [x] Adicionar docente na turma;<br>
+  [x] Pegar a idade de algum estudante a partir do id;<br>
 
-2. Docente
+- **Desafios:**<br>
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+  [x]Exibir estudantes de uma turma;<br>
+  [x] Exibir docentes de uma turma;<br>
+  [x] Exibir estudantes que possuam o mesmo hobby;<br>
+  [x] Remover estudante de uma turma;<br>
+  [x] Remover estudante;<br>
+  [x] Remover docente de uma turma;<br>
+  [x] Mudar turma de módulo.<br>
 
-3. Turma
+### 🛠 Tecnologias
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+<a href="https://www.mysql.com/">🔗 MySQL</a>
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+- Sistema gerenciador de banco de dados relacional de código aberto.
 
-As funcionalidades básicas são:
+<a href="https://expressjs.com/pt-br/">🔗 Express.js</a>
 
-→ Criar estudante;
+- Framework para Node.js que fornece recursos para a criação de APIs.
 
-→ Criar docente;
+<a href="http://knexjs.org/">🔗 Knex.js</a>
 
-→ Criar turma;
+- Query builder para JavaScript.
 
-→ Adicionar estudante na turma;
+### 🚀 Autora e Autor
 
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/alexa2me">
+    <img src="https://avatars.githubusercontent.com/u/63327969?s=460&v=4" width="100px" alt="Imagem do perfil da Alexandra"/>
+    <br />
+    <sub><b>Alexandra Alcantara</b></sub><br />:snowflake::snowman::snowflake:</td>
+    <td align="center"><a href="https://github.com/fagnerzulin">
+    <img src="https://avatars.githubusercontent.com/u/52076737?v=4" width="100px" alt="Imagem do perfil do Fagner"/>
+    <br />
+    <sub><b>Fagner Zulin</b></sub><br />🚀</td>
+ 
+</table>
