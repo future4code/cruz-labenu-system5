@@ -20,6 +20,7 @@ routes.get("/teacher/specialty", teacherController.getAllSpecialties);
 routes.patch("/teacher/:id", teacherController.addClass);
 routes.delete("/teacher/:id", teacherController.removeClass);
 routes.post("/student", studentController.postStudent);
+routes.post("/student/hobby", studentController.postHobby);
 routes.post("/student/update-class/:id", studentController.updateStudent);
 routes.delete("/student/update-class/:id", studentController.removeClass);
 routes.get("/student-age/:id", studentController.getStudentAge);

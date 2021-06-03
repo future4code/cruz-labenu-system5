@@ -80,7 +80,15 @@ Content-Type: application/json
 // Get teachers by class
 GET http://localhost:3003/class/1f193484-dc32-40dc-a59a-9ba761fea701/teachers
 
+###
 
+// Create hobby
+POST http://localhost:3003/student/hobby
+Content-Type: application/json
+
+{
+  "name": "Sing"
+}
 
 
 

@@ -1,6 +1,7 @@
 import { Response, Request } from "express";
 import { v4 as uuidv4 } from "uuid";
 import {
+  createHobby,
   createStudent,
   deleteClass,
   deleteStudent,
@@ -8,7 +9,7 @@ import {
   studentAge,
   studentsByClass,
 } from "../data/studentQueries";
-import { labenuStudent } from "../types/student";
+import { labenuStudent, hobby } from "../types/student";
 
 export default class StudentController {
   postStudent = async (req: Request, res: Response) => {
@@ -80,6 +81,21 @@ export default class StudentController {
       res.send({ message: "Deleted student" });
     } catch (error) {
       res.status(400).send(error.message);
+    }
+  };
+
+  postHobby = async (req: Request, res: Response) => {
+    try {
+      const { name } = req.body;
+      if (!name) throw new Error("The name field is missing");
+      const data: hobby = {
+        id: uuidv4(),
+        name,
+      };
+      await createHobby(data);
+      res.send({ message: "Hobby created!" });
+    } catch (error) {
+      res.status(400).send({ message: error.message });
     }
   };
 }

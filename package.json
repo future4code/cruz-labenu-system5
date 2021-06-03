@@ -9,11 +9,10 @@
     "dev-start": "CHOKIDAR_USEPOLLING=true tsnd --transpile-only --ignore-watch node_modules ./src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ale & Zulin",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dayjs": "^1.10.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "knex": "^0.95.6",
