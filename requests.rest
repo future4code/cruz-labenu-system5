@@ -1,0 +1,110 @@
+// Create class
+POST http://localhost:3003/class
+Content-Type: application/json
+
+{
+  "name": "Cruz",
+  "startDate": "2021-01-25",
+  "endDate": "2021-08-30",
+  "shift": "fulltime",
+  "module": 4
+}
+
+###
+
+// Create student
+POST http://localhost:3003/student
+Content-Type: application/json
+
+{
+  "name": "64651",
+  "email": "38",
+  "birthDate": "2010-08-02"
+}
+
+###
+
+// Choose a class to a student
+POST http://localhost:3003/student/update-class/8433274f-06df-4876-821b-7fef33afbf44
+Content-Type: application/json
+
+{
+  "classId": "1f193484-dc32-40dc-a59a-9ba761fea701"
+}
+
+###
+
+// Get a student's age
+GET http://localhost:3003/student-age/
+
+###
+
+// Get students by class
+GET http://localhost:3003/class/1f193484-dc32-40dc-a59a-9ba761fea701/students
+
+###
+
+// Create specialty
+POST http://localhost:3003/teacher/specialty
+Content-Type: application/json
+
+{
+  "name": "Infra"
+}
+
+###
+
+// Create teacher
+POST http://localhost:3003/teacher
+Content-Type: application/json
+
+{
+  "name": "Tom Hanks",
+  "email": "tom@mail.com",
+  "birthDate": "1960-06-15",
+  "specialties": ["0b7f1767-5a0f-45dc-9f77-7f7e7ba848fb"]
+}
+
+###
+
+// Assign teacher to a class
+PATCH http://localhost:3003/teacher/7430e843-a16a-4db0-aa13-e1a7a530612b
+Content-Type: application/json
+
+{
+  "classId": "1f193484-dc32-40dc-a59a-9ba761fea701"
+}
+
+###
+
+// Get teachers by class
+GET http://localhost:3003/class/1f193484-dc32-40dc-a59a-9ba761fea701/teachers
+
+###
+
+// Create hobby
+POST http://localhost:3003/student/hobby
+Content-Type: application/json
+
+{
+  "name": "Sing"
+}
+
+###
+
+// Assign hobby to a student
+PATCH http://localhost:3003/student/add/hobby
+Content-Type: application/json
+
+{
+  "hobbyId": "",
+  "studentId": "4d17c4a0-d870-47f5-b27a-16308fb05f05"
+}
+
+###
+
+// Get students by hobby
+GET http://localhost:3003/hobby/84554529-63ff-4582-b206-83215c4edc6e/students
+
+
+
